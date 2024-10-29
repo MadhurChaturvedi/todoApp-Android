@@ -14,12 +14,12 @@
 
     <ImageView
         android:id="@+id/iv_mic"
-        android:paddingTop="15dp"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:paddingTop="20dp"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
         android:layout_marginTop="30dp"
         android:gravity="center"
-        android:src="@drawable/microphone_342" />
+        android:src="@drawable/mic_sound_record_voice_svgrepo_com" />
 
     <Button
         android:id="@+id/newTaskButton"
