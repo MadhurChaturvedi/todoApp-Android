@@ -5,8 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -42,28 +41,17 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
         db.openDatabase();
 
+        // Get the current ToDoModel item
         final ToDoModel item = todoList.get(position);
-        holder.task.setText(item.getTask());
-        holder.task.setChecked(toBoolean(item.getStatus()));
-        holder.task.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    db.updateStatus(item.getId(), 1);
-                } else {
-                    db.updateStatus(item.getId(), 0);
-                }
-            }
-        });
-    }
 
-    private boolean toBoolean(int n) {
-        return n != 0;
+        // Set the serial number (position + 1) and task description
+        holder.sno.setText(String.valueOf(position + 1));
+        holder.task.setText(item.getTask());
     }
 
     @Override
     public int getItemCount() {
-        return todoList.size();
+        return todoList != null ? todoList.size() : 0;
     }
 
     public Context getContext() {
@@ -93,11 +81,13 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        CheckBox task;
+        TextView sno;
+        TextView task;
 
         ViewHolder(View view) {
             super(view);
-            task = view.findViewById(R.id.todoCheckBox);
+            sno = view.findViewById(R.id.todoSno); // Serial number TextView
+            task = view.findViewById(R.id.todoTask); // Task description TextView
         }
     }
 }
