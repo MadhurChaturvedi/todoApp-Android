@@ -35,4 +35,12 @@ public class ToDoModel {
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
+    private char type;
+    public char getType() {
+        return type;  // Ensure it always returns a char
+    }
+
+    public void setType(char type) {
+        this.type = type;
+    }
 }

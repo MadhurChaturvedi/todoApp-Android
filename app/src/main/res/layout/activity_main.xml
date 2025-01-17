@@ -15,7 +15,17 @@
         android:layout_marginTop="16dp"
         android:textSize="32sp"
         android:text="@string/tasks" />
-
+    <ImageButton
+        android:id="@+id/exportButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:layout_alignTop="@id/tasksText"
+        android:background="@color/btncolor"
+        android:contentDescription="@string/export_tasks"
+        android:src="@drawable/ic_export" />
+        />
     <!-- Table Header -->
     <TableLayout
         android:id="@+id/tableHeader"
@@ -88,5 +98,4 @@
         android:layout_margin="32dp"
         android:backgroundTint="#1692D2"
         android:src="@drawable/ic_baseline_add_24" />
-
 </RelativeLayout>
