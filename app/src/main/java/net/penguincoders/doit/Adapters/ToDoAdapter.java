@@ -47,6 +47,7 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
         // Set the serial number (position + 1) and task description
         holder.sno.setText(String.valueOf(position + 1));
         holder.task.setText(item.getTask());
+        holder.timestampTextView.setText(item.getTimestamp());  // Use item.getTimestamp() here
     }
 
     @Override
@@ -75,6 +76,7 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
         Bundle bundle = new Bundle();
         bundle.putInt("id", item.getId());
         bundle.putString("task", item.getTask());
+        bundle.putString("timestamp", item.getTimestamp());  // Include timestamp in the bundle
         AddNewTask fragment = new AddNewTask();
         fragment.setArguments(bundle);
         fragment.show(activity.getSupportFragmentManager(), AddNewTask.TAG);
@@ -83,11 +85,13 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView sno;
         TextView task;
+        TextView timestampTextView;  // Timestamp TextView
 
         ViewHolder(View view) {
             super(view);
-            sno = view.findViewById(R.id.todoSno); // Serial number TextView
-            task = view.findViewById(R.id.todoTask); // Task description TextView
+            sno = view.findViewById(R.id.todoSno);  // Serial number TextView
+            task = view.findViewById(R.id.todoTask);  // Task description TextView
+            timestampTextView = view.findViewById(R.id.timestampTextView);  // Initialize timestamp TextView
         }
     }
 }

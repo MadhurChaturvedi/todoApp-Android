@@ -3,6 +3,7 @@ package net.penguincoders.doit.Model;
 public class ToDoModel {
     private int id, status;
     private String task;
+    private String timestamp;
 
     public int getId() {
         return id;
@@ -26,5 +27,12 @@ public class ToDoModel {
 
     public void setTask(String task) {
         this.task = task;
+    }
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
 }
