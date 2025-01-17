@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tasksText"
         android:layout_marginTop="16dp"
-        android:background="#D3D3D3">
+        android:background="#ecf0f1">
 
         <TableRow android:padding="8dp">
             <TextView
