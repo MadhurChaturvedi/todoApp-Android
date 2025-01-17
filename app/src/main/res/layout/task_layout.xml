@@ -1,48 +1,78 @@
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    app:cardElevation="4dp"
-    app:cardCornerRadius="8dp"
     android:layout_marginHorizontal="16dp"
-    android:layout_marginVertical="8dp">
+    android:layout_marginVertical="8dp"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="8dp">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:orientation="vertical"
+        android:padding="12dp">
 
-        <TextView
-            android:id="@+id/todoSno"
-            android:layout_width="wrap_content"
+        <!-- Table Header -->
+
+
+        <!-- Table Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:text="1."
-            android:paddingEnd="8dp"
-            android:textSize="20sp" />
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
 
-        <TextView
-            android:id="@+id/todoTask"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Task Description"
-            android:textSize="20sp"
-            android:paddingStart="20dp"
-            />
+            <TextView
+                android:id="@+id/todoSno"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1"
+                android:gravity="center"
+                android:textSize="14sp" />
 
-        <!-- Timestamp TextView -->
-        <TextView
-            android:id="@+id/timestampTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Timestamp will be shown here"
-            android:textSize="16sp"
-            android:layout_marginTop="30dp"
-            android:layout_centerHorizontal="true" />
+<!--            <TextView-->
+<!--                android:id="@+id/todoTask"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="2"-->
+<!--                android:text="Task Description"-->
+<!--                android:gravity="center"-->
+<!--                android:textSize="14sp" />-->
 
+            <TextView
+                android:id="@+id/taskType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Coming Soon"
+                android:gravity="center"
+                android:textColor="#888888"
+                android:textStyle="italic"
+                android:textSize="14sp" />
 
+            <TextView
+                android:id="@+id/todoTask"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Coming Soon"
+                android:gravity="center"
+                android:textColor="#888888"
+                android:textStyle="italic"
+                android:textSize="14sp" />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/timestampTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="00:00:00"
+                android:gravity="center"
+                android:textSize="14sp" />
+        </LinearLayout>
 
+    </LinearLayout>
 </androidx.cardview.widget.CardView>
